@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tbc-001">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tbc-scn">
+            <objects>
+                <tabBarController id="tbc-001" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tb-001"/>
+                    <connections>
+                        <segue destination="nav-001" kind="relationship" relationship="viewControllers" id="seg-rel-1"/>
+                        <segue destination="nav-002" kind="relationship" relationship="viewControllers" id="seg-rel-2"/>
+                        <segue destination="nav-003" kind="relationship" relationship="viewControllers" id="seg-rel-3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbc-fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="100"/>
+        </scene>
+        <!--Navigation Controller (Test)-->
+        <scene sceneID="nav-scn-1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" prefersLargeTitles="YES" id="nav-001" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBarItem key="tabBarItem" title="Test" image="checkmark.circle" catalog="system" id="tbi-001"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nb-001"/>
+                    <connections>
+                        <segue destination="vc-home" kind="relationship" relationship="rootViewController" id="seg-root-1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-fr-1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="0"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="vc-home-scn">
+            <objects>
+                <viewController id="vc-home" customClass="HomeViewController" customModule="MoneyBrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="home-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="home-safe"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Money Brain" id="home-ni"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc-home-fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="0"/>
+        </scene>
+        <!--Navigation Controller (Ergebnisse)-->
+        <scene sceneID="nav-scn-2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" prefersLargeTitles="YES" id="nav-002" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBarItem key="tabBarItem" title="Ergebnisse" image="chart.bar" catalog="system" id="tbi-002"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nb-002"/>
+                    <connections>
+                        <segue destination="vc-res" kind="relationship" relationship="rootViewController" id="seg-root-2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-fr-2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="320"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="vc-res-scn">
+            <objects>
+                <tableViewController id="vc-res" customClass="ResultsViewController" customModule="MoneyBrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="res-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="pc-001">
+                                <rect key="frame" x="20" y="64" width="353" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" id="cv-001"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vc-res" id="ds-001"/>
+                            <outlet property="delegate" destination="vc-res" id="dl-001"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ergebnisse" id="res-ni"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc-res-fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="320"/>
+        </scene>
+        <!--Navigation Controller (Einstellungen)-->
+        <scene sceneID="nav-scn-3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" prefersLargeTitles="YES" id="nav-003" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBarItem key="tabBarItem" title="Einstellungen" image="gearshape" catalog="system" id="tbi-003"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nb-003"/>
+                    <connections>
+                        <segue destination="vc-set" kind="relationship" relationship="rootViewController" id="seg-root-3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-fr-3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="640"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="vc-set-scn">
+            <objects>
+                <viewController id="vc-set" customClass="SettingsViewController" customModule="MoneyBrain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="set-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="803"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="set-safe"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Einstellungen" id="set-ni"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc-set-fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="640"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="128" height="116"/>
+        <image name="gearshape" catalog="system" width="128" height="122"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
